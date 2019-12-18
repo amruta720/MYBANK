@@ -1,0 +1,64 @@
+.container{
+        width: 80%;
+        margin: 0 auto; /* Center the DIV horizontally */
+    }
+
+.glass { 
+	padding: 15px 0;
+	background: #333;
+    width: 100%;
+    z-index: 2;
+}
+.mytext {
+    width: 300px;
+}
+h1 {
+  color: white;
+}
+*{
+	padding: 0;
+	margin: 0;
+}
+.menu-bar{
+	background: #2AA1A0;
+	text_align:center;
+}
+.menu-bar ul{
+	display:inline-flex;
+	list-style:none;
+	color:#fff;
+}
+.menu-bar ul li{
+	width:200px;
+	margin:15px;
+	padding:15px;
+}
+.menu-bar ul li a{
+	text-decoration: none;
+	color: #fff;
+}
+.active,.menu-bar ul li:hover{
+	background:#44E3E2;
+	border-radius:3px;
+}
+.menu-bar .fa{
+	margin-right: 7px;
+}
+.sub-menu-1{
+	display: none;
+}
+
+.menu-bar ul li:hover .sub-menu-1{
+	display: block;
+	position: absolute;
+    background: #44E3E2;
+    margin-top: 15px;
+    margin-left: -15px;
+}
+.footer { 
+	padding: 20px 0;
+	background: #333;
+    width: 100%;
+    z-index: 2;
+    bottom-margin:1
+}
