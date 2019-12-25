@@ -79,4 +79,24 @@
     <servlet-name>NEFTController</servlet-name>
     <url-pattern>/NEFTController</url-pattern>
   </servlet-mapping>
+   <servlet>
+    <description></description>
+    <display-name>DisplayController</display-name>
+    <servlet-name>DisplayController</servlet-name>
+    <servlet-class>com.controller.NEFTController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DisplayController</servlet-name>
+    <url-pattern>/DisplayController</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <description></description>
+    <display-name>AdminLogin</display-name>
+    <servlet-name>AdminLogin</servlet-name>
+    <servlet-class>com.controller.AdminLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminLogin</servlet-name>
+    <url-pattern>/AdminLogin</url-pattern>
+  </servlet-mapping>
 </web-app>

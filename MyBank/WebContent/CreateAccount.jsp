@@ -6,118 +6,120 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
+
+<link rel="stylesheet" href="allcss.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <body>
-	<h2 align="center"> Application Form </h2>
+	<div class="glass">
+	   <h1   align="center"><b><i class="fa fa-retweet"></i>JM ROAD BANK</b></h1>
+	</div>
+	
+	<div class="menu-bar">
+		<h2 align="center"> Application Form </h2>
+	</div>	
+	
 	<form action="CreateAccountController" method = "post" >
-		NAME  
-		<select>
-			<option value="Mr">Mr</option>
-			<option value="Mrs">Mrs</option>
-			<option value="Ms">Ms</option>
-		</select>
-		<input type="text" name="FirstName"  >
-		<input type="text" name="MiddleName"  >
-		<input type="text" name="LastName"  >
-		<br>
-		FATHER'S NAME/GUARDIAN'S NAME    
-		<select>
-			<option value="Mr">Mr</option>
-			<option value="Mrs">Mrs</option>
-			<option value="Ms">Ms</option>
-		</select>
-		<input type="text" name="FatherFirstName" value="First Name" >
-		<input type="text" name="FatherMiddleName" value="Middle Name" >
-		<input type="text" name="FatherLastName" value="Last Name" >
-		<br>
 		
-		DATE OF BIRTH
-		<input type="text" name="Date_Of_Birth">
-		<br>
+		<div class="Signup">
+			<table align="center">
+				<tr>
+					<td><b>NAME</b></td>
+					<td>
+						<select>
+							<option value="Mr">Mr</option>
+							<option value="Mrs">Mrs</option>
+							<option value="Ms">Ms</option>
+						</select>
+					</td>
+					<td><input type="text" name="FirstName" placeholder="Enter First Name" required="firstname is required"  ></td>
+					<td><input type="text" name="MiddleName" placeholder="Enter middle Name" required="middlename is required"></td>
+					<td><input type="text" name="LastName"  placeholder="Enter last Name"required="lastname is required"></td>
+				</tr>
+				<tr>
+					<td><label><b>FATHER'S NAME/GUARDIAN'S NAME</b></label> </td>
+					<td>
+						<select>
+							<option value="Mr">Mr</option>
+							<option value="Mrs">Mrs</option>
+							<option value="Ms">Ms</option>
+						</select>
+					</td>
+					<td><input type="text" name="FatherFirstName" placeholder="First Name" required></td>
+					<td><input type="text" name="FatherMiddleName" placeholder="Middle Name" required ></td>
+					<td><input type="text" name="FatherLastName" placeholder="Last Name"required></td>
+				</tr>
+				<tr>
+					<td><label><b>	DATE OF BIRTH</b></label></td>
+					<td><input type="text" name="Date_Of_Birth" required="DateOfBirth is required"  placeholder="DD-MON-YY"></td>
+				</tr>
+				<tr>
+					<td><label><b>GENDER</b></label></td>
+					<td><input type="radio" name="Gender" value="Male" required="Gender is required">Male</td>
+					<td><input type="radio" name="Gender" value="Female" required="Gender is required">Female</td>
+					<td><input type="radio" name="Gender" value="Other" required="Gender is required">Other</td>
+				</tr>
+				<tr>
+					<td><label><b>	NATIONALITY</b></label></td>
+					<td><input type="text" value="Indian" name="Nationality" required="nationality is required"></td>		
+				</tr>
+				<tr>
+					<td><label><b>	AADHAR CARD NUMBER</b></label></td>
+					<td><input type="text" name="AadharNo" placeholder="Enter 12 Digit Aadhar Number"  required="AadharNo is required"></td>
+				</tr>
+				<tr>
+					<td><label><b>PAN CARD NUMBER</b></label></td>
+					<td><input type="text" name="PanCardNo"  placeholder="Enter 8 Digit Aadhar Number" required="PanCardNo is required"></td>
+				</tr>
+				<tr>
+					<td><label><b>LOCAL ADDRESS</b></label></td>
+					<td><input type="text" name="LocalAddress"  placeholder="Enter Local Address"></td>
+				</tr>
+				<tr>
+					<td><label><b>	PERMANENT ADDRESS</b></label></td>
+					<td><input type="text" name="PermanentAddress" placeholder="Enter Permanent Address" required="LocalAddress is required"></td>
+				</tr>
 		
-		GENDER  
-		<input type="radio" name="Gender" value="Male">Male
-		<input type="radio" name="Gender" value="Female">Female
-		<input type="radio" name="Gender" value="Other">Other
-		<br>
-		
-		NATIONALITY
-		<input type="text" value="Indian" name="Nationality">		
-		<br>
-		
-		AADHAR CARD NUMBER
-		<input type="text" name="AadharNo" >
-		<br>
-
-		PAN CARD NUMBER
-		<input type="text" name="PanCardNo" >
-		<br>
-		
-		LOCAL ADDRESS
-		<input type="text" name="LocalAddress">
-		<br>
-
-		PERMANENT ADDRESS
-		<input type="text" name="PermanentAddress">
-		<br>
-
-		STATE
-		<select name="State">
-			<option value="Maharashtra">Maharashtra</option>
-			<option value="Mrs"></option>
-			<option value="Ms">Ms</option>
-		</select>	
-			
-		<br>
-
-		CITY
-		<select  name="City">
-			<option value="Pune">Pune</option>
-			<option value="Mumbai">Mumbai</option>
-			<option value="Ms">Ms</option>
-		</select>		
-		<br>
-
-		PINCODE
-		<input type="text" name="Pincode" >
-		<br>
-
-		MOBILE NUMBER
-		<input type="text" name="MobileNo" >
-		<br>
-
-
-		EMAIL ID
-		<input type="text" name="Email_Id">
-		<br>
-		
-
-		<center>UPLOAD DOCUMENTS</center>
-		<br>
-		
-		AADHAR CARD
-		<input type = "file" name = "AadharCardDocument" size = "50" />
-         <br />
-		<br><br>
-		PAN CARD
-		<input type = "file" name = "PanCardDocument" size = "50" />
-		<br><br>
-		
-		ELECTRICITY BILL
-		<input type = "file" name = "ElectricityBillDocument" size = "50" />
-		<br><br>
-		
-		INCOME CERTIFICATE
-		<input type = "file" name = "IncomeCertificateDocument" size = "50" />
-		<br><br>
-		PASSPORT SIZE PHOTO
-		<input type = "file" name = "PassportPhoto" size = "50" />
-		<br><br>
-		
-		SIGNATURE
-		<input type = "file" name = "Signature" size = "50" />
-		<br><br>
-					
-		<input type="submit" value="Submit">
+				<tr>
+					<td><label><b>	STATE</b></label></td>
+					<td>
+						<select name="State" required="State is required">
+							<option value="Maharashtra">Maharashtra</option>
+							<option value="Maharashtra">Gujarat</option>
+							<option value="Maharashtra">Rajasthan</option>
+							<option value="Maharashtra">Karnataka</option>
+						</select>	
+					</td>
+				</tr>
+				<tr>
+					<td><label><b>	CITY</b></label></td>
+					<td>
+						<select  name="City" required="City is required">
+							<option value="Pune">Pune</option>
+							<option value="Mumbai">Mumbai</option>
+							<option value="Ms">Ms</option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr>
+					<td><label><b>	PINCODE</b></label></td>
+					<td><input placeholder="Enter 6 digit PinCode" type="number" name="Pincode"  pattern="{0-9}{6}" title="Enter valid pincode" required="Pincode is required"></td>
+				</tr>
+				<tr>
+					<td><label><b>MOBILE NUMBER  </b></label></td>
+					<td><input placeholder="Enter 10 digit Mobile No" type="number" name="MobileNo" pattern="{0-9}{10}" title="Enter valid mobile no" required="MobileNo is required"></td>
+				</tr>
+				<tr>
+					<td><label><b>EMAIL ID</b></label></td>
+					<td><input type="email" placeholder="Enter Email_Id" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="Email_Id is required" name="Email_Id"></td>
+				</tr>
+				
+				<tr>
+					<td><input type="submit" value="Next" ></td>
+				</tr>
+			</table>
+		</div>
 	</form>
 	
 </body>

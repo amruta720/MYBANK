@@ -47,12 +47,9 @@ padding:100px;
    </tr>   
 <tr> 
 <td><input type="submit" value="Login" name="Login"></td>
-
-
 <tr>
 <td> New User?<a href="CreateAccount.jsp"><font size="2">Create Account</font></a></td>
 </tr>
-
 </table>
 </form>
 </body>

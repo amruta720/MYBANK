@@ -1,29 +1,29 @@
 package com.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.dao.RequestDao;
+import com.dao.CreateAccountDao;
 import com.model.CreateAccountModel;
 
 /**
- * Servlet implementation class RequestController
+ * Servlet implementation class DisplayController
  */
-public class RequestController extends HttpServlet {
+public class DisplayController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
-     * @see HttpServlet#HttpServlet()
+     * Default constructor. 
      */
-    public RequestController() {
-        super();
+    public DisplayController() {
         // TODO Auto-generated constructor stub
     }
 
@@ -31,28 +31,29 @@ public class RequestController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+		
+		CreateAccountDao applicantdata=new CreateAccountDao();
+		List<CreateAccountModel> applicantdatalist=applicantdata.getApplicantData();
+		
+		HttpSession s=request.getSession(true);
+		s.setAttribute("ApplicantDetails",applicantdatalist);
+		response.sendRedirect("DisplayApplication.jsp");
+		
+		
+	//	System.out.println(.getCustomer_Name());
+	//  request.setAttribute("data",applicantdatalist);
+	//	RequestDispatcher view = request.getRequestDispatcher("DisplayApplication.jsp");
+	//  view.forward(request, response);
+		
+		}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session=request.getSession();
-		List<CreateAccountModel> lst=(List<CreateAccountModel>) session.getAttribute("request");
-		PrintWriter pw=response.getWriter();
-		pw.println("hii...");
-					
-		RequestDao rd=new RequestDao();
-		rd.info();
-		pw.print("hello..");
-	//for(CreateAccountModel AccModel:lst){
-	 //     System.out.println("hii");
-		//}
-		
-		doGet(request, response);
+		//doGet(request, response);
+
 	}
 
 }

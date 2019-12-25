@@ -28,7 +28,9 @@ public class RequestDao {
 System.out.println(e);	
 }return con;
     }
-      public static void info(){
+      public void info(){
+    	  int i=0;
+    	 
     	  try{
     		  Statement stmt=con.createStatement();
     		  ResultSet rs=stmt.executeQuery("select * from Customer_Personal_details");
@@ -39,7 +41,7 @@ System.out.println(e);
     		  
     	  }catch(Exception e)
     	  {
-    		  
+    		  System.out.println(e);
     	  }
     	  
       }

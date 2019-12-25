@@ -26,11 +26,15 @@ body{
    <h1   align="center"><b><i class="fa fa-retweet"></i>JM ROAD BANK</b></h1>
 </div>
 <div class="menu-bar">
-	<ul>
-		<li ><a href="#"><i class="fa fa-address-book-o"></i>Acoount Details</a>
+<ul>
+<li ><a href="LogIn.jsp"><i class="fa fa-address-book-o"></i>Home</a>
+			
+		</li>
+    
+		<li ><a href="#"><i class="fa fa-address-book-o"></i>Account Details</a>
 			<ul>
 				<div class="sub-menu-1">
-				<li><a href="#">See Account Details</a></li>
+					<li><a href="AccDetail.jsp">See Account Details</a></li>
 				</div>
 			</ul>
 		</li>
@@ -46,7 +50,7 @@ body{
 		<li><a href="#"><i class="fa fa-clone"></i>Account Statement</a>
 			<ul>
 				<div class="sub-menu-1">
-				<li><a href="#">Mini Statement</a></li>
+				<li><a href="MiniStatement.jsp">Mini Statement</a></li>
 				<li><a href="#">Detailed Statement</a></li>
 				</div>
 			</ul>
@@ -54,7 +58,7 @@ body{
 		<li><a href="#"><i class="fa fa-edit"></i>Apply For</a>
 			<ul>
 				<div class="sub-menu-1">
-				<li><a href="#">Passbook</a></li>
+				<li><a href="Passbook.jsp">Passbook</a></li>
 				<li><a href="#">Credit Card</a></li>
 				<li><a href="#">Checkbook</a></li>
 				</div>
@@ -77,12 +81,12 @@ body{
 	
 	</ul>
 </div>
+</body>
+<marquee><h2 align ="center"><font size="6" >WELCOME TO ONLINE SERVICES OF JM ROAD BANK</font></h2>
+</marquee>
 
-<h2 align ="center"><font size="6" color="White">WELCOME TO ONLINE SERVICES OF JM ROAD BANK</font></h2>
+<p align="center"><font size="5" >We provide you the online money tranfering and account handeling services to make you easy to handel banking activities anywhere and anytime</font></p>
 
-
-<p align="center"><font size="5" color="white">We provide you the online money tranfering and account handeling services to make you easy to handel banking activities anywhere and anytime</font></p>
-
-<h3 align="center"><font size="6" color="White">HOPE YOU WILL BE SATISFIED BY THE SERVICE</font></h3>
-
+<h3 align="center"><font size="6" >HOPE YOU WILL BE SATISFIED BY THE SERVICE</font></h3>
+<marquee ></marquee>
 </html>

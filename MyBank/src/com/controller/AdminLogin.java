@@ -1,29 +1,21 @@
 package com.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import com.dao.RequestDao;
-import com.model.CreateAccountModel;
 
 /**
- * Servlet implementation class RequestController
+ * Servlet implementation class AdminLogin
  */
-public class RequestController extends HttpServlet {
+public class AdminLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
-     * @see HttpServlet#HttpServlet()
+     * Default constructor. 
      */
-    public RequestController() {
-        super();
+    public AdminLogin() {
         // TODO Auto-generated constructor stub
     }
 
@@ -40,17 +32,19 @@ public class RequestController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session=request.getSession();
-		List<CreateAccountModel> lst=(List<CreateAccountModel>) session.getAttribute("request");
-		PrintWriter pw=response.getWriter();
-		pw.println("hii...");
-					
-		RequestDao rd=new RequestDao();
-		rd.info();
-		pw.print("hello..");
-	//for(CreateAccountModel AccModel:lst){
-	 //     System.out.println("hii");
-		//}
+		String User_Name=request.getParameter("UserName");
+		String Password=request.getParameter("Password");
+		
+
+		
+		
+		
+		if(User_Name.equals("admin")&&Password.equals("admin")){
+			System.out.println("ok");
+			response.sendRedirect("Admin.jsp");
+		}
+		
+
 		
 		doGet(request, response);
 	}

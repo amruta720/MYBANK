@@ -40,8 +40,7 @@ public class AdminLoginController extends HttpServlet {
 		
 		
 		
-		if(User_Name.equals("amruta")&&Password.equals("1234")){
-			System.out.println("ok");
+		if(User_Name.equals("admin")&&Password.equals("admin")){
 			response.sendRedirect("Admin.jsp");
 		}
 		

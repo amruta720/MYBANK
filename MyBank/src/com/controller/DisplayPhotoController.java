@@ -1,3 +1,4 @@
+package com.controller;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,12 +22,13 @@ public class DisplayPhotoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	  protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			    throws ServletException, IOException {
-			        
+			        			            response.setContentType("image/jpeg");
+
 			        try {
 			            Class.forName("oracle.jdbc.driver.OracleDriver");
 			            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","System","123456789");
 			            System.out.println("Test2");
-			            PreparedStatement ps = con.prepareStatement("select AADHAR_CARD,PAN_CARD from customer_document_details where Email_ID = ?");
+			            PreparedStatement ps = con.prepareStatement("select AADHAR_CARD from customer_document_details where Email_ID = ?");
 			            System.out.println("test3");
 			            String Email_Id = request.getParameter("Email_Id");
 			            ps.setString(1,Email_Id);
@@ -34,39 +36,31 @@ public class DisplayPhotoController extends HttpServlet {
 			            rs.next();
 			            System.out.println("test4");
 
-			            Blob  b1 = rs.getBlob("Aadhar_card");
-			            Blob  b2 = rs.getBlob("Pan_card");
-
+			            Blob  b = rs.getBlob("AADHAR_CARD");
 			            System.out.println("test5");
-			            response.setContentType("image/jpeg");
 			            System.out.println("test6");
-			            response.setContentLength( (int) b1.length());
-			            response.setContentLength( (int) b2.length());
+
+			            response.setContentLength( (int) b.length());
 			            System.out.println("test7");
-			            InputStream is1 = b1.getBinaryStream();
-			            InputStream is2 = b2.getBinaryStream();
+
+			            InputStream is = b.getBinaryStream();
 			            System.out.println("test8");
 
 			            OutputStream os = response.getOutputStream();
 			            System.out.println("test9");
 
-			            byte buf1[] = new byte[(int) b1.length()];
-			            byte buf2[] = new byte[(int) b2.length()];
+			            byte buf[] = new byte[(int) b.length()];
 
-			            System.out.println("test10");
+			            System.out.println(buf);
 
-			            is1.read(buf1);
-			            os.write(buf1);
-			            is2.read(buf2);
-			            os.write(buf2);
-			           
+			            is.read(buf);
+			            os.write(buf);
 			            os.close();
 			        }
 			        catch(Exception ex) {
 			             System.out.println(ex.getMessage());
 			        }
 			    } 
-   
     /**
      * @see HttpServlet#HttpServlet()
      */

@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.fileupload.FileItem;
+
 import com.dao.CreateAccountDao;
 import com.model.CreateAccountModel;
 
@@ -25,12 +27,7 @@ public class CreateAccountController extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-	List<CreateAccountModel> lst=null;
-	public void init()
-	{
-		 lst = new LinkedList<CreateAccountModel>();
-	}
-	
+		
     public CreateAccountController() {
         super();
         // TODO Auto-generated constructor stub
@@ -51,8 +48,9 @@ public class CreateAccountController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String Customer_Name=request.getParameter("FirstName")+(String)request.getParameter("MiddleName")+(String)request.getParameter("LastName");
-		 String Customer_Fathers_Name=request.getParameter("FatherFirstName")+(String)request.getParameter("FatherMiddleName")+(String)request.getParameter("FatherLastName");
+		 
+		 String Customer_Name=request.getParameter("FirstName")+" "+(String)request.getParameter("MiddleName")+" "+(String)request.getParameter("LastName");
+		 String Customer_Fathers_Name=request.getParameter("FatherFirstName")+" "+(String)request.getParameter("FatherMiddleName")+" "+(String)request.getParameter("FatherLastName");
 		 String DateOfBirth=request.getParameter("Date_Of_Birth");
 		 String Gender=request.getParameter("Gender");
 		 String Nationality=request.getParameter("Nationality");
@@ -65,38 +63,39 @@ public class CreateAccountController extends HttpServlet {
 		 String Pincode=request.getParameter("Pincode");
 		 String MobileNo=request.getParameter("MobileNo");
 		 String Email_Id=request.getParameter("Email_Id");
-
+		 System.out.println(Customer_Name);
 	   System.out.println(Email_Id);
 		 
 		
 		CreateAccountModel AccModel=new CreateAccountModel();
-		AccModel.setCustomer_Name(Customer_Name);
-		AccModel.setEmail_Id(Email_Id);
 
+		AccModel.setCustomer_Name(Customer_Name);
 		AccModel.setCustomer_Fathers_Name(Customer_Fathers_Name);
 		AccModel.setDate_Of_Birth(DateOfBirth);
 		AccModel.setGender(Gender);
 		AccModel.setNationality(Nationality);
 		AccModel.setMobile_No(MobileNo);
-		AccModel.setAadhar_No(AadharNo);
-		AccModel.setPanCard_No(PanCardNo);
+		AccModel.setEmail_Id(Email_Id);
+
 		AccModel.setLocal_Address(Local_Address);
 		AccModel.setPermanent_Address(Permanent_Address);
 		AccModel.setCity(City);
 		AccModel.setState(State);
+		AccModel.setPincode(Pincode);
 		
-		//List<CreateAccountModel> lst=new ArrayList<CreateAccountModel>();
-	  lst.add(AccModel);
-	  HttpSession session=request.getSession(true);
-		session.setAttribute("request",lst);
-	  
+		AccModel.setAadhar_No(AadharNo);
+		AccModel.setPanCard_No(PanCardNo);
+
+		List<CreateAccountModel> lst=new ArrayList<CreateAccountModel>();
+		lst.add(AccModel);
+	   
 	  
 	  CreateAccountDao Account_Dao=new CreateAccountDao();
-	  int i=Account_Dao.Customer_Personal_details(lst);
+	  int i=Account_Dao.Customer_details(lst);
 	  
 	  if(i>0)
 	  {
-		  response.sendRedirect("CreateAccount.jsp");
+		  response.sendRedirect("Upload.jsp");
 	  }
 	  
 		//doGet(request, response);
